@@ -11,14 +11,14 @@ let first = document.getElementById("first"),
     fourth = document.getElementById("fourth");
 
 function checkInput(beginbalance, monthlyadding, rate, periodday) {
-    if (beginbalance.value <= 0 || monthlyadding.value <= 0 || rate.value <= 0 || rate.value > 100 || periodday.value <= 0 || Math.trunc(periodday.value) != periodday.value) {
+    if (beginbalance.value <= 0 || monthlyadding.value < 0 || rate.value <= 0 || rate.value > 100 || periodday.value <= 0 || Math.trunc(periodday.value) != periodday.value) {
         if (beginbalance.value <= 0) {
             first.className = "show";
             console.log("Начальная сумма вклада содержит ошибку ввода");
         } else {
             first.className = "block";
         }
-        if (monthlyadding.value <= 0) {
+        if (monthlyadding.value < 0) {
             second.className = "show";
             console.log("Сумму ежемесячного пополнения содержит ошибку ввода");
         } else {
