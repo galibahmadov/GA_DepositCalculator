@@ -20,19 +20,19 @@ function checkInput(beginbalance, monthlyadding, rate, periodday) {
         }
         if (monthlyadding.value <= 0) {
             second.className = "show";
-            console.log("Сумма пополнения содержит ошибку ввода");
+            console.log("Сумму ежемесячного пополнения содержит ошибку ввода");
         } else {
             second.className = "block";
         }
         if (rate.value <= 0 || rate.value > 100) {
             third.className = "show";
-            console.log("Процент содержит ошибку ввода");
+            console.log("Величину доходности по вкладу содержит ошибку ввода");
         } else {
             third.className = "block";
         }
         if (periodday.value <= 0 || Math.trunc(periodday.value) != periodday.value) {
             fourth.className = "show";
-            console.log("Срок содержит ошибку ввода");
+            console.log("Срок вклада (дней) содержит ошибку ввода");
         } else {
             fourth.className = "block";
         }
@@ -50,22 +50,23 @@ function getvalue(amount, addingAmount, monthlyRate, timePeriod) {
     let beginbalance=+amount.value;
     let monthlyadding=+addingAmount.value
     let rate=+monthlyRate.value;
-    let periodday=Math.floor(+timePeriod.value/30);
-    let finalamount;
+    let periodday=+timePeriod.value;
+    let finalamount=0;
+    let periodday1=+Math.floor(periodday/30)
     
     
-    if (periodday =1) {
-        finalamount = beginbalance + beginbalance * rate / 1200;
+    if (periodday <59) {
+        finalamount = Math.floor(beginbalance + beginbalance * rate / 1200);
     }
-    else if (periodday > 1) {
-        let finalamount1 = beginbalance * Math.pow((1 + rate / 1200), periodday);
+    else if (periodday > 59) {
+        let finalamount1 = beginbalance * Math.pow((1 + rate / 1200), periodday1);
         let addingsum = 0;
-        for (let i = 0; i <= periodday; i++) {
+        for (let i = 0; i <= periodday1; i++) {
             addingsum += monthlyadding * Math.pow((1 + rate / 1200), i);
         }
-        finalamount = finalamount1 + addingsum - monthlyadding;
+        finalamount = Math.floor(finalamount1 + addingsum - monthlyadding);
     }
-    alert(Math.round(finalamount));
+    alert(finalamount);
     return (finalamount);
 }
 
