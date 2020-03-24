@@ -1,5 +1,5 @@
 let amount = document.getElementById("beginbalance");
-let addingAmount =document.getElementById("monthlyadding");
+let addingAmount = document.getElementById("monthlyadding");
 let monthlyRate = document.getElementById("rate");
 let timePeriod = document.getElementById("periodday");
 let btn = document.getElementById("calculate");
@@ -47,15 +47,15 @@ function checkInput(beginbalance, monthlyadding, rate, periodday) {
 }
 
 function getvalue(amount, addingAmount, monthlyRate, timePeriod) {
-    let beginbalance=+amount.value;
-    let monthlyadding=+addingAmount.value
-    let rate=+monthlyRate.value;
-    let periodday=+timePeriod.value;
-    let finalamount=0;
-    let periodday1=+Math.floor(periodday/30)
-    
-    
-    if (periodday <59) {
+    let beginbalance = +amount.value;
+    let monthlyadding = +addingAmount.value
+    let rate = +monthlyRate.value;
+    let periodday = +timePeriod.value;
+    let finalamount = 0;
+    let periodday1 = +Math.floor(periodday / 30)
+
+
+    if (periodday <= 59) {
         finalamount = Math.floor(beginbalance + beginbalance * rate / 1200);
     }
     else if (periodday > 59) {
