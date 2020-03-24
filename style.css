@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(198, 191, 191);
+    font-family: 'Sen', 'Times New Roman', Times, serif;
+}
+
+.design {
+    width: 1000px;
+    font-size: 20px;
+    margin: auto;
+}
+
+.interface {
+    font-family: 'Sen', 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    margin-top: 200px;
+    border-radius: 10px;
+ 
+}
+
+.interface table{
+    margin:  auto;
+}
+.interface table tr td{
+    padding: 10px;
+}
+
+#calculate {
+    width: 480px;
+    height: 30px;
+    background-color: rgb(23, 165, 23);
+    border-radius: 10px;
+    color: white;
+}
+.error {
+    text-align: center;
+    color: red;
+}
+
+.block {
+    display: none;
+}
+
+.show {
+    display: block;
+}

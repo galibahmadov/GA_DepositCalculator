@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project two</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+
+<body>
+    <div class="design">
+
+        <div class="interface">
+            <table>
+                <tr>
+                    <td>Начальную сумму вклада </td>
+                    <td><input type="text" name="" id="beginbalance"></td>
+                </tr>
+                <tr>
+                    <td>Сумму ежемесячного пополнения </td>
+                    <td><input type="text" name="" id="monthlyadding"></td>
+                </tr>
+                <tr>
+                    <td>Величину доходности по вкладу </td>
+                    <td><input type="text" name="" id="rate"></td>
+                </tr>
+                <tr>
+                    <td>Срок вклада (дней) </td>
+                    <td><input type="text" name="" id="periodday"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="calculate">Calculate</button></td>
+                </tr>
+
+
+            </table>
+            <div class="error">
+                <p id="first" class="block">Начальная сумма вклада содержит ошибку ввода</p>
+                <p id="second" class="block">Сумма пополнения содержит ошибку ввода</p>
+                <p id="third" class="block">Процент содержит ошибку ввода</p>
+                <p id="fourth" class="block">Срок содержит ошибку ввода</p>
+              </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
